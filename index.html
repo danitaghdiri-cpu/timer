@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Neon Timer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="timer">
+
+        <h1>NEON TIMER</h1>
+
+        <div class="time">
+
+            <div class="time-box">
+                <span id="hour">00</span>
+                <small>ساعت</small>
+            </div>
+
+            <div class="colon">:</div>
+
+            <div class="time-box">
+                <span id="minute">00</span>
+                <small>دقیقه</small>
+            </div>
+
+            <div class="colon">:</div>
+
+            <div class="time-box">
+                <span id="second">00</span>
+                <small>ثانیه</small>
+            </div>
+
+        </div>
+
+        <div class="buttons">
+
+            <button class="start" onclick="start()">
+                start
+            </button>
+
+            <button class="stop" onclick="stop()">
+                stop
+            </button>
+
+            <button class="reset" onclick="reset()">
+                reset
+            </button>
+
+        </div>
+
+    </div>
+
+    <script>
+let second = 0;
+let minute = 0;
+let hour = 0;
+
+let timer = null;
+
+const secondElement = document.getElementById("second");
+const minuteElement = document.getElementById("minute");
+const hourElement = document.getElementById("hour");
+
+const timerElement = document.querySelector(".timer");
+
+
+function updateTimer() {
+
+    secondElement.innerText =
+        String(second).padStart(2, "0");
+
+    minuteElement.innerText =
+        String(minute).padStart(2, "0");
+
+    hourElement.innerText =
+        String(hour).padStart(2, "0");
+}
+
+
+function start() {
+
+    if (timer) {
+        return;
+    }
+
+    timerElement.classList.add("running");
+
+    timer = setInterval(function () {
+
+        second++;
+
+        if (second === 60) {
+            second = 0;
+            minute++;
+        }
+
+        if (minute === 60) {
+            minute = 0;
+            hour++;
+        }
+
+        updateTimer();
+
+    }, 1000);
+}
+
+
+function stop() {
+
+    clearInterval(timer);
+
+    timer = null;
+
+    timerElement.classList.remove("running");
+}
+
+
+function reset() {
+
+    clearInterval(timer);
+
+    timer = null;
+
+    second = 0;
+    minute = 0;
+    hour = 0;
+
+    timerElement.classList.remove("running");
+
+    updateTimer();
+}
+
+
+updateTimer();
+    </script>
+
+</body>
+
+</html>
