@@ -1,0 +1,272 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at top, #17213d, #050509 60%);
+
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+
+/* کارت اصلی */
+
+.timer {
+    width: 90%;
+    max-width: 650px;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    background: rgba(10, 10, 25, 0.75);
+
+    border: 1px solid #00f7ff;
+    border-radius: 25px;
+
+    box-shadow:
+        0 0 15px #00f7ff,
+        0 0 40px rgba(0, 247, 255, 0.4),
+        inset 0 0 30px rgba(0, 247, 255, 0.08);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* عنوان */
+
+.timer h1 {
+    margin-top: 0;
+    margin-bottom: 40px;
+
+    font-size: 32px;
+    letter-spacing: 5px;
+
+    color: #00f7ff;
+
+    text-shadow:
+        0 0 5px #00f7ff,
+        0 0 15px #00f7ff,
+        0 0 30px #00f7ff;
+}
+
+
+/* قسمت زمان */
+
+.time {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    direction: ltr;
+}
+
+
+/* هر عدد */
+
+.time-box {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.time-box span {
+    min-width: 110px;
+
+    padding: 15px 10px;
+
+    font-size: 65px;
+    font-weight: bold;
+
+    color: #ff3355;
+
+    background: rgba(255, 0, 255, 0.05);
+
+    border: 1px solid #ff3355;
+    border-radius: 15px;
+
+    text-shadow:
+        0 0 5px #ff3355,
+        0 0 15px #ff3355,
+        0 0 30px #ff3355;
+
+    box-shadow:
+        0 0 10px #00f7ff,
+        inset 0 0 15px rgba(255, 0, 255, 0.1);
+}
+
+
+.time-box small {
+    margin-top: 10px;
+
+    color: #aaa;
+
+    font-size: 14px;
+}
+
+
+/* : */
+
+.colon {
+    font-size: 50px;
+
+    color: #00f7ff;
+
+    text-shadow:
+        0 0 10px #00f7ff,
+        0 0 25px #00f7ff;
+}
+
+
+/* دکمه‌ها */
+
+.buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 40px;
+}
+
+
+button {
+    width: 120px;
+
+    padding: 13px;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+/* شروع */
+
+.start {
+    color: #00ff88;
+
+    border: 1px solid #00ff88;
+
+    box-shadow:
+        0 0 8px rgba(0, 255, 136, 0.5);
+}
+
+
+.start:hover {
+    color: black;
+
+    background: #00ff88;
+
+    box-shadow:
+        0 0 10px #00ff88,
+        0 0 30px #00ff88;
+}
+
+
+/* توقف */
+
+.stop {
+    color: #ff3355;
+
+    border: 1px solid #ff3355;
+
+    box-shadow:
+        0 0 8px rgba(255, 51, 85, 0.5);
+}
+
+
+.stop:hover {
+    color: black;
+
+    background: #ff3355;
+
+    box-shadow:
+        0 0 10px #ff3355,
+        0 0 30px #ff3355;
+}
+
+
+/* ریست */
+
+.reset {
+    color: #00f7ff;
+
+    border: 1px solid #00f7ff;
+
+    box-shadow:
+        0 0 8px rgba(0, 247, 255, 0.5);
+}
+
+
+.reset:hover {
+    color: black;
+
+    background: #00f7ff;
+
+    box-shadow:
+        0 0 10px #00f7ff,
+        0 0 30px #00f7ff;
+}
+
+
+/* موبایل */
+
+@media (max-width: 600px) {
+
+    .timer {
+        padding: 30px 15px;
+    }
+
+    .timer h1 {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .time {
+        gap: 7px;
+    }
+
+    .time-box span {
+        min-width: 75px;
+
+        font-size: 42px;
+
+        padding: 12px 5px;
+    }
+
+    .colon {
+        font-size: 35px;
+    }
+
+    .buttons {
+        gap: 8px;
+    }
+
+    button {
+        width: 95px;
+        font-size: 14px;
+    }
+}
